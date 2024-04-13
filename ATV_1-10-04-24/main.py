@@ -9,6 +9,7 @@ def menu():
         print("                 Controle                ")
         print("             [O] On | [X] Off            ")
         print("           [A] +Vol | [V] -Vol           ")
+        print("           [M] Mute | [S] Unmute         ")
         print("               [1] [2] [3]               ")
         print("               [4] [5] [6]               ")
         print("               [7] [8] [9]               ")
@@ -35,6 +36,10 @@ def chamarFuncoes(resp):
             return controle.aumentarVolume(tv)
         case "v":
             return controle.diminuirVolume(tv)
+        case "m":
+            return controle.silenciarVolume(tv)
+        case "s":
+            return controle.restaurarVolume(tv)
         case _:
             return print('Limite alcançado')
 

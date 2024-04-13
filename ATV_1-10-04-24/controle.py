@@ -21,14 +21,24 @@ class Controle:
 
     def ajustarVolume(self, tv, valor):
         novoVolume = tv.volumeAtual + valor
-        if 0 <= novoVolume <= 10:
+        if 1 <= novoVolume <= 10:
             tv.volumeAtual = novoVolume
-            print(f'Ajustando volume para {tv.volumeAtual}')
         else:
             print('Limite alcançado')
 
     def aumentarVolume(self, tv):
         self.ajustarVolume(tv, 1)
+        print(f'Ajustando volume para {tv.volumeAtual}')
 
     def diminuirVolume(self, tv):
         self.ajustarVolume(tv, -1)
+        print(f'Ajustando volume para {tv.volumeAtual}')
+
+    def silenciarVolume(self, tv):
+        self.ajustarVolume(tv, valor=0)
+        print("Silenciado")
+    
+    def restaurarVolume(self, tv):
+        volumeAnterior = tv.volumeAtual
+        self.ajustarVolume(tv, volumeAnterior)
+        print(f'Ajustando volume para {tv.volumeAtual}')
